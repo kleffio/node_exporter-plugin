@@ -1,0 +1,26 @@
+{
+  "id": "node-exporter-source",
+  "name": "Node Exporter",
+  "type": "observability",
+  "tier": 1,
+  "description": "Exposes host-level hardware and OS metrics for Prometheus/Alloy scraping.",
+  "longDescription": "Runs the official Prometheus node_exporter on each host. Exports CPU, memory, disk, filesystem, network, and load metrics in Prometheus text format. Alloy or any Prometheus-compatible collector will automatically discover this plugin as a scrape target via the platform HTTP SD endpoint.",
+  "tags": ["observability", "metrics", "prometheus", "node-exporter", "hardware"],
+  "capabilities": ["monitoring.source"],
+  "author": "Kleff",
+  "repo": "https://github.com/prometheus/node_exporter",
+  "image": "prom/node-exporter",
+  "version": "v1.8.2",
+  "license": "Apache-2.0",
+  "verified": true,
+  "scrape": {
+    "port": 9100,
+    "path": "/metrics",
+    "scheme": "http"
+  },
+  "volumes": [
+    { "hostPath": "/", "target": "/host", "readOnly": true }
+  ],
+  "command": ["--path.rootfs=/host"],
+  "config": []
+}
