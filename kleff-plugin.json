@@ -6,7 +6,7 @@
   "description": "Exposes host-level hardware and OS metrics for Prometheus/Alloy scraping.",
   "longDescription": "Runs the official Prometheus node_exporter on each host. Exports CPU, memory, disk, filesystem, network, and load metrics in Prometheus text format. Alloy or any Prometheus-compatible collector will automatically discover this plugin as a scrape target via the platform HTTP SD endpoint.",
   "tags": ["observability", "metrics", "prometheus", "node-exporter", "hardware"],
-  "capabilities": ["monitoring.source"],
+  "capabilities": ["monitoring.source", "monitoring.source.host"],
   "author": "Kleff",
   "repo": "https://github.com/prometheus/node_exporter",
   "image": "prom/node-exporter",
